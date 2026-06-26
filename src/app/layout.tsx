@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -33,7 +34,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          {children}
+          <SmoothScrollProvider>{children}</SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight, ChevronDown, Menu } from "lucide-react";
+import { useGSAP } from "@gsap/react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { companyLinks, productLinks } from "@/lib/content";
 import { Logo } from "@/components/sections/logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
 
 const navLinks = [
   { title: "Developers", href: "https://docs.monime.io/get-started" },
@@ -25,6 +27,8 @@ const navLinks = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [openMenu, setOpenMenu] = useState<"products" | "company" | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const keepVisibleRef = useRef(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -33,8 +37,38 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    keepVisibleRef.current = openMenu !== null;
+  }, [openMenu]);
+
+  useGSAP(
+    () => {
+      if (!headerRef.current || prefersReducedMotion()) return;
+
+      const trigger = ScrollTrigger.create({
+        start: "top top",
+        end: "max",
+        onUpdate(self) {
+          const hide = self.direction === 1 && self.scroll() > 120 && !keepVisibleRef.current;
+          gsap.to(headerRef.current, {
+            yPercent: hide ? -130 : 0,
+            duration: 0.4,
+            ease: "power3.out",
+            overwrite: true,
+          });
+        },
+      });
+
+      return () => trigger.kill();
+    },
+    { scope: headerRef },
+  );
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4">
+    <header
+      ref={headerRef}
+      className="fixed inset-x-0 top-0 z-50 flex justify-center px-4 pt-4"
+    >
       <nav
         onMouseLeave={() => setOpenMenu(null)}
         className={cn(

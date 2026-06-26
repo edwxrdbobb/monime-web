@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Banknote, CheckCheck, QrCode, Smartphone } from "lucide-react";
 
-import { Reveal } from "@/components/ui/reveal";
+import { ScrollReveal } from "@/components/gsap/scroll-reveal";
 import { cn } from "@/lib/utils";
 import { inPersonSteps } from "@/lib/content";
 
@@ -16,7 +16,7 @@ export function InPerson() {
   return (
     <section id="in-person" className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
       <div className="grid grid-cols-1 gap-14 lg:grid-cols-2 lg:items-center">
-        <Reveal>
+        <ScrollReveal>
           <p className="text-sm font-semibold tracking-wide text-primary uppercase">
             Get paid in-person
           </p>
@@ -66,11 +66,11 @@ export function InPerson() {
               );
             })}
           </div>
-        </Reveal>
+        </ScrollReveal>
 
-        <Reveal delay={0.1}>
+        <ScrollReveal delay={0.1}>
           <DeviceMockup step={active} />
-        </Reveal>
+        </ScrollReveal>
       </div>
     </section>
   );

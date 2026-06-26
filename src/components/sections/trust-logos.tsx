@@ -1,17 +1,17 @@
 import Image from "next/image";
 
 import { Marquee } from "@/components/ui/marquee";
-import { Reveal } from "@/components/ui/reveal";
+import { ScrollReveal } from "@/components/gsap/scroll-reveal";
 import { trustLogos } from "@/lib/content";
 
 export function TrustLogos() {
   return (
     <section className="border-y border-border/70 bg-muted/30 py-10">
-      <Reveal>
+      <ScrollReveal>
         <p className="mb-6 text-center text-xs font-medium tracking-widest text-muted-foreground uppercase">
           Trusted by 2,000+ businesses across Sierra Leone
         </p>
-      </Reveal>
+      </ScrollReveal>
       <Marquee duration={28}>
         {trustLogos.map((logo) => (
           <Image

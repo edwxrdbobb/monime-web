@@ -4,22 +4,27 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Reveal } from "@/components/ui/reveal";
+import { ScrollReveal } from "@/components/gsap/scroll-reveal";
+import { SplitHeading } from "@/components/gsap/split-heading";
 import { faqs } from "@/lib/content";
 
 export function Faq() {
   return (
     <section id="faq" className="mx-auto max-w-3xl px-4 py-24 sm:px-6">
-      <Reveal className="text-center">
-        <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+      <ScrollReveal className="text-center">
+        <SplitHeading
+          as="h2"
+          type="lines"
+          className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl"
+        >
           Frequently Asked Questions
-        </h2>
+        </SplitHeading>
         <p className="mt-4 text-muted-foreground">
           Everything you need to know about using Monime.
         </p>
-      </Reveal>
+      </ScrollReveal>
 
-      <Reveal delay={0.1} className="mt-10">
+      <ScrollReveal className="mt-10" delay={0.1}>
         <Accordion className="flex flex-col gap-3">
           {faqs.map((faq) => (
             <AccordionItem
@@ -36,7 +41,7 @@ export function Faq() {
             </AccordionItem>
           ))}
         </Accordion>
-      </Reveal>
+      </ScrollReveal>
     </section>
   );
 }

@@ -1,7 +1,13 @@
+"use client";
+
 import type { SVGProps } from "react";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
 
 import { Logo } from "@/components/sections/logo";
 import { footerLinks } from "@/lib/content";
+import { ScrollReveal, ScrollStagger } from "@/components/gsap/scroll-reveal";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -45,12 +51,40 @@ const socials = [
 ];
 
 export function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      if (!footerRef.current || prefersReducedMotion()) return;
+
+      gsap.fromTo(
+        footerRef.current,
+        { y: 64, scale: 0.96 },
+        {
+          y: 0,
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top bottom",
+            end: "top 60%",
+            scrub: true,
+          },
+        },
+      );
+    },
+    { scope: footerRef },
+  );
+
   return (
-    <footer className="relative overflow-hidden rounded-t-[2.5rem] bg-[#0a1226] px-4 pt-16 pb-10 text-slate-300 sm:px-6">
+    <footer
+      ref={footerRef}
+      className="relative overflow-hidden rounded-t-[2.5rem] bg-[#0a1226] px-4 pt-16 pb-10 text-slate-300 sm:px-6"
+    >
       <div className="bg-dot pointer-events-none absolute inset-0 opacity-[0.04]" />
 
       <div className="relative mx-auto max-w-6xl">
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
+        <ScrollStagger className="grid grid-cols-2 gap-10 sm:grid-cols-4" y={20}>
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
               <p className="text-sm font-semibold text-white">{section}</p>
@@ -68,9 +102,12 @@ export function Footer() {
               </ul>
             </div>
           ))}
-        </div>
+        </ScrollStagger>
 
-        <div className="mt-14 flex flex-col gap-8 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between">
+        <ScrollReveal
+          delay={0.1}
+          className="mt-14 flex flex-col gap-8 border-t border-white/10 pt-8 sm:flex-row sm:items-end sm:justify-between"
+        >
           <div>
             <Logo alwaysWhite />
             <p className="mt-4 max-w-sm text-sm text-slate-400">
@@ -98,7 +135,7 @@ export function Footer() {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
 
         <p className="mt-10 text-center text-xs text-slate-500">
           © {new Date().getFullYear()} Monime. All rights reserved.

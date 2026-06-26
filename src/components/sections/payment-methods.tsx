@@ -11,7 +11,7 @@ import {
   Wallet,
 } from "lucide-react";
 
-import { Reveal } from "@/components/ui/reveal";
+import { ScrollReveal } from "@/components/gsap/scroll-reveal";
 import { Blob } from "@/components/ui/blob";
 import { BentoGrid, BentoItem } from "@/components/ui/bento-grid";
 import { cn } from "@/lib/utils";
@@ -37,11 +37,11 @@ export function PaymentMethods() {
         variant="slow"
       />
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">
-        <Reveal className="order-2 lg:order-1">
+        <ScrollReveal className="order-2 lg:order-1">
           <PhoneShowcase active={active} onSelect={setActive} />
-        </Reveal>
+        </ScrollReveal>
 
-        <Reveal delay={0.1} className="order-1 lg:order-2">
+        <ScrollReveal delay={0.1} className="order-1 lg:order-2">
           <h2 className="text-balance text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
             Delight customers with a seamless payments experience
           </h2>
@@ -76,7 +76,7 @@ export function PaymentMethods() {
               );
             })}
           </BentoGrid>
-        </Reveal>
+        </ScrollReveal>
       </div>
     </section>
   );
