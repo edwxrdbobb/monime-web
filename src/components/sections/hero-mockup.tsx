@@ -12,7 +12,7 @@ const transactions = [
 export function HeroMockup() {
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-violet-400/15 to-transparent blur-3xl" />
+      <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-sky-400/15 to-transparent blur-3xl" />
 
       <motion.div
         initial={{ opacity: 0, y: 30, rotate: -2 }}
@@ -79,7 +79,7 @@ export function HeroMockup() {
         style={{ "--float-rotate": "-3deg" } as React.CSSProperties}
         className="glass animate-float absolute -top-6 -left-6 flex items-center gap-2.5 rounded-2xl px-4 py-3 shadow-3d sm:-left-10"
       >
-        <span className="flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-primary to-violet-600 text-white">
+        <span className="flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-primary to-sky-500 text-white">
           <ShoppingCart className="size-4" />
         </span>
         <div>
@@ -104,7 +104,7 @@ export function HeroMockup() {
         </div>
         <p className="mt-1 text-2xl font-semibold tracking-tight text-foreground">99.9%</p>
         <div className="mt-2 h-1.5 w-full overflow-hidden rounded-full bg-foreground/10">
-          <div className="h-full w-[99%] rounded-full bg-gradient-to-r from-primary to-violet-500" />
+          <div className="h-full w-[99%] rounded-full bg-gradient-to-r from-primary to-sky-400" />
         </div>
       </motion.div>
     </div>

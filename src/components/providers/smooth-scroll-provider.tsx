@@ -23,6 +23,7 @@ function LenisGsapSync() {
 
   useEffect(() => {
     if (!lenis) return;
+    const activeLenis = lenis;
 
     function onClick(event: MouseEvent) {
       const anchor = (event.target as HTMLElement)?.closest?.('a[href^="#"]');
@@ -35,7 +36,7 @@ function LenisGsapSync() {
       if (!target) return;
 
       event.preventDefault();
-      lenis.scrollTo(target as HTMLElement, { offset: -96, duration: 1.2 });
+      activeLenis.scrollTo(target as HTMLElement, { offset: -96, duration: 1.2 });
     }
 
     document.addEventListener("click", onClick);

@@ -142,7 +142,7 @@ export function Navbar() {
           </Button>
           <Button
             size="lg"
-            className="group rounded-full bg-gradient-to-r from-primary to-violet-600 px-4 glow-primary transition-transform hover:scale-[1.03] hover:from-primary hover:to-violet-500"
+            className="group rounded-full bg-gradient-to-r from-primary to-sky-500 px-4 glow-primary transition-transform hover:scale-[1.03] hover:from-primary hover:to-sky-400"
             nativeButton={false}
             render={<a href="#cta" />}
           >

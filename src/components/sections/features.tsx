@@ -8,7 +8,7 @@ const icons = { ShieldCheck, Wallet, ArrowUpRight };
 
 const collage = [
   { label: "Retail", gradient: "from-amber-400/80 via-orange-400/70 to-rose-400/60" },
-  { label: "Freelance", gradient: "from-sky-400/80 via-blue-400/70 to-indigo-400/60" },
+  { label: "Freelance", gradient: "from-sky-400/80 via-blue-400/70 to-cyan-400/60" },
   { label: "Food & Beverage", gradient: "from-emerald-400/80 via-teal-400/70 to-cyan-400/60" },
 ];
 

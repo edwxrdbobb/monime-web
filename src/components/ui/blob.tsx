@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type BlobProps = {
   className?: string;
-  /** Tailwind gradient color stops, e.g. "from-primary via-blue-500 to-violet-500" */
+  /** Tailwind gradient color stops, e.g. "from-primary via-blue-500 to-sky-400" */
   colors?: string;
   /** Animation variant */
   variant?: "default" | "slow";
@@ -14,7 +14,7 @@ type BlobProps = {
  */
 export function Blob({
   className,
-  colors = "from-primary via-blue-500 to-violet-500",
+  colors = "from-primary via-blue-500 to-sky-400",
   variant = "default",
 }: BlobProps) {
   return (

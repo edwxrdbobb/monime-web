@@ -99,7 +99,7 @@ export default function PricingPage() {
                   size="lg"
                   className={`mt-6 h-11 rounded-full px-6 ${
                     plan.featured
-                      ? "bg-gradient-to-r from-primary to-violet-600 glow-primary"
+                      ? "bg-gradient-to-r from-primary to-sky-500 glow-primary"
                       : ""
                   }`}
                   variant={plan.featured ? "default" : "outline"}

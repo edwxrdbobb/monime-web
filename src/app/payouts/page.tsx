@@ -90,7 +90,7 @@ export default function PayoutsPage() {
         actions={
           <Button
             size="lg"
-            className="h-11 rounded-full bg-gradient-to-r from-primary to-violet-600 px-6 glow-primary"
+            className="h-11 rounded-full bg-gradient-to-r from-primary to-sky-500 px-6 glow-primary"
             nativeButton={false}
             render={<a href="/contact" />}
           >
@@ -128,9 +128,9 @@ function PayoutsMockup() {
   ];
   return (
     <div className="relative mx-auto w-full max-w-sm">
-      <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-violet-400/15 to-transparent blur-3xl" />
+      <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-sky-400/15 to-transparent blur-3xl" />
       <div className="glass-strong rounded-[2.5rem] p-5 shadow-3d-lg">
-        <div className="rounded-2xl bg-gradient-to-br from-primary to-violet-600 p-5 text-white">
+        <div className="rounded-2xl bg-gradient-to-br from-primary to-sky-500 p-5 text-white">
           <p className="text-xs opacity-80">Payouts balance</p>
           <p className="mt-1 text-3xl font-semibold tracking-tight">SLE 48,920</p>
         </div>
@@ -172,7 +172,7 @@ function Developers() {
           </p>
           <Button
             size="lg"
-            className="mt-6 h-11 rounded-full bg-gradient-to-r from-primary to-violet-600 px-6 glow-primary"
+            className="mt-6 h-11 rounded-full bg-gradient-to-r from-primary to-sky-500 px-6 glow-primary"
             nativeButton={false}
             render={<a href="/contact" />}
           >

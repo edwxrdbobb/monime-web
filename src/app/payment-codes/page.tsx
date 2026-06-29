@@ -46,7 +46,7 @@ export default function PaymentCodesPage() {
         actions={
           <Button
             size="lg"
-            className="h-11 rounded-full bg-gradient-to-r from-primary to-violet-600 px-6 glow-primary"
+            className="h-11 rounded-full bg-gradient-to-r from-primary to-sky-500 px-6 glow-primary"
             nativeButton={false}
             render={<a href="/contact" />}
           >
@@ -60,7 +60,7 @@ export default function PaymentCodesPage() {
         ]}
         visual={
           <div className="relative mx-auto w-full max-w-md">
-            <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-violet-400/15 to-transparent blur-3xl" />
+            <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-sky-400/15 to-transparent blur-3xl" />
             <div className="glass-strong overflow-hidden rounded-3xl p-2 shadow-3d-lg">
               <Image
                 src="/heroimg.webp"

@@ -33,7 +33,7 @@ export function PaymentMethods() {
     <section className="relative overflow-hidden bg-muted/30 py-24">
       <Blob
         className="top-1/4 left-[-8%] h-[380px] w-[380px] opacity-20"
-        colors="from-primary via-blue-500 to-violet-500"
+        colors="from-primary via-blue-500 to-sky-400"
         variant="slow"
       />
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center">

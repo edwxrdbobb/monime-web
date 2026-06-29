@@ -47,7 +47,7 @@ export default function OnlinePaymentsPage() {
           <>
             <Button
               size="lg"
-              className="h-11 rounded-full bg-gradient-to-r from-primary to-violet-600 px-6 glow-primary"
+              className="h-11 rounded-full bg-gradient-to-r from-primary to-sky-500 px-6 glow-primary"
               nativeButton={false}
               render={<a href="/contact" />}
             >
@@ -85,7 +85,7 @@ export default function OnlinePaymentsPage() {
 function CheckoutMockup() {
   return (
     <div className="relative mx-auto w-full max-w-md">
-      <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-violet-500/25 via-primary/15 to-transparent blur-3xl" />
+      <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-sky-400/25 via-primary/15 to-transparent blur-3xl" />
       <div className="glass-strong rounded-3xl p-5 shadow-3d-lg">
         <div className="flex items-center justify-between border-b border-border pb-4">
           <p className="text-sm font-semibold text-foreground">Checkout</p>
@@ -121,7 +121,7 @@ function CheckoutMockup() {
             </div>
           ))}
         </div>
-        <div className="mt-5 flex h-11 items-center justify-center rounded-xl bg-gradient-to-r from-primary to-violet-600 text-sm font-semibold text-white">
+        <div className="mt-5 flex h-11 items-center justify-center rounded-xl bg-gradient-to-r from-primary to-sky-500 text-sm font-semibold text-white">
           Pay SLE 420.00
         </div>
       </div>

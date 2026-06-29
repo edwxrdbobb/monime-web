@@ -79,7 +79,7 @@ export function InPerson() {
 function DeviceMockup({ step }: { step: number }) {
   return (
     <div className="relative mx-auto flex h-[420px] w-full max-w-sm items-center justify-center">
-      <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/20 via-violet-300/15 to-transparent blur-3xl" />
+      <div className="absolute -inset-8 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/20 via-sky-300/15 to-transparent blur-3xl" />
       <div className="glass-strong relative flex h-full w-full flex-col rounded-[2.5rem] p-5 shadow-3d-lg">
         <div className="mx-auto h-1.5 w-16 rounded-full bg-muted" />
         <div className="mt-6 flex-1">

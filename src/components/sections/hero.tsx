@@ -44,13 +44,13 @@ export function Hero() {
       <Parallax speed={40} className="absolute inset-0 -z-20">
         <Blob
           className="top-[-12%] left-1/2 h-[520px] w-[620px] -translate-x-1/2 opacity-40"
-          colors="from-primary via-blue-500 to-violet-500"
+          colors="from-primary via-blue-500 to-sky-400"
         />
       </Parallax>
       <Parallax speed={-55} className="absolute inset-0 -z-20">
         <Blob
           className="top-[18%] right-[-6%] h-[360px] w-[360px] opacity-30"
-          colors="from-violet-500 via-indigo-500 to-primary"
+          colors="from-sky-400 via-blue-500 to-primary"
           variant="slow"
         />
       </Parallax>
@@ -68,7 +68,7 @@ export function Hero() {
             href="#online-payments"
             className="glass group inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium text-foreground/80 shadow-3d transition-colors hover:text-foreground"
           >
-            <span className="rounded-full bg-gradient-to-br from-primary to-violet-500 px-2 py-0.5 text-[10px] font-semibold text-white">
+            <span className="rounded-full bg-gradient-to-br from-primary to-sky-400 px-2 py-0.5 text-[10px] font-semibold text-white">
               New
             </span>
             See the latest API docs
@@ -82,7 +82,7 @@ export function Hero() {
             className="mt-6 text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
           >
             Modern payments for{" "}
-            <span className="bg-gradient-to-br from-primary via-blue-500 to-violet-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-br from-primary via-blue-500 to-sky-400 bg-clip-text text-transparent">
               growing businesses
             </span>
           </SplitHeading>
@@ -103,7 +103,7 @@ export function Hero() {
             <Magnetic>
               <Button
                 size="lg"
-                className="h-11 rounded-full bg-gradient-to-r from-primary to-violet-600 px-6 text-[0.95rem] glow-primary transition-transform hover:scale-[1.02] hover:from-primary hover:to-violet-500"
+                className="h-11 rounded-full bg-gradient-to-r from-primary to-sky-500 px-6 text-[0.95rem] glow-primary transition-transform hover:scale-[1.02] hover:from-primary hover:to-sky-400"
                 nativeButton={false}
                 render={<a href="#cta" />}
               >

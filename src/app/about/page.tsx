@@ -48,7 +48,7 @@ export default function AboutPage() {
           <>
             <Button
               size="lg"
-              className="h-11 rounded-full bg-gradient-to-r from-primary to-violet-600 px-6 glow-primary"
+              className="h-11 rounded-full bg-gradient-to-r from-primary to-sky-500 px-6 glow-primary"
               nativeButton={false}
               render={<a href="/contact" />}
             >

@@ -28,11 +28,11 @@ export function PageHero({
       <div className="absolute inset-x-0 top-0 -z-20 h-[520px] bg-gradient-to-b from-primary/10 via-background to-transparent" />
       <Blob
         className="top-[-14%] left-1/2 h-[460px] w-[560px] -translate-x-1/2 opacity-30"
-        colors="from-primary via-blue-500 to-violet-500"
+        colors="from-primary via-blue-500 to-sky-400"
       />
       <Blob
         className="top-[20%] right-[-8%] h-[320px] w-[320px] opacity-25"
-        colors="from-violet-500 via-indigo-500 to-primary"
+        colors="from-sky-400 via-blue-500 to-primary"
         variant="slow"
       />
 

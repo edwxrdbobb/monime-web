@@ -28,7 +28,7 @@ const defaultFlows: Flow[] = [
     description:
       "Receive payments from all networks. It's quick, simple, and requires no internet.",
     art: "orbit",
-    accent: "from-violet-500 to-indigo-500",
+    accent: "from-sky-500 to-blue-600",
   },
 ];
 

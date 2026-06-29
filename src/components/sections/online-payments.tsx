@@ -19,7 +19,7 @@ export function OnlinePayments() {
       <Parallax speed={35} className="absolute inset-0 -z-10">
         <Blob
           className="top-[6%] right-[2%] h-[300px] w-[300px] opacity-20"
-          colors="from-violet-500 via-primary to-blue-600"
+          colors="from-sky-400 via-primary to-blue-600"
         />
       </Parallax>
       <ScrollReveal className="mx-auto max-w-2xl text-center">

@@ -22,7 +22,7 @@ export function DownloadApp() {
         <div className="bg-dot absolute inset-0 -z-20 mask-fade-b opacity-50" />
         <Blob
           className="top-[-10%] left-1/2 h-[420px] w-[520px] -translate-x-1/2 opacity-30"
-          colors="from-primary via-blue-500 to-violet-500"
+          colors="from-primary via-blue-500 to-sky-400"
         />
         <div className="mx-auto max-w-2xl px-4 sm:px-6">
           <Reveal className="flex flex-col items-center">
@@ -89,7 +89,7 @@ export function DownloadApp() {
               <div className="mt-6">
                 <Button
                   size="lg"
-                  className="h-11 rounded-xl bg-gradient-to-r from-primary to-violet-600 px-6 glow-primary"
+                  className="h-11 rounded-xl bg-gradient-to-r from-primary to-sky-500 px-6 glow-primary"
                 >
                   <Download className="size-4" />
                   Download for {label}
@@ -125,7 +125,7 @@ function ToggleButton({
       {active && (
         <motion.span
           layoutId="platform-pill"
-          className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-primary to-violet-600"
+          className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-primary to-sky-500"
           transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
         />
       )}
@@ -138,9 +138,9 @@ function ToggleButton({
 function PhoneMockup() {
   return (
     <div className="relative mx-auto w-full max-w-[220px]">
-      <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-violet-400/15 to-transparent blur-2xl" />
+      <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-sky-400/15 to-transparent blur-2xl" />
       <div className="glass-strong rounded-[2.25rem] p-3 shadow-3d-lg">
-        <div className="overflow-hidden rounded-[1.75rem] bg-gradient-to-b from-primary to-violet-700 p-4 text-white">
+        <div className="overflow-hidden rounded-[1.75rem] bg-gradient-to-b from-primary to-sky-600 p-4 text-white">
           <p className="text-[11px] opacity-80">Main · 046838791</p>
           <p className="mt-1 text-2xl font-semibold tracking-tight">SLE •••••</p>
           <div className="mt-4 flex justify-between">
