@@ -81,12 +81,12 @@ export const inPersonSteps = [
 ];
 
 export const paymentMethods = [
-  { name: "Card", icon: "CreditCard" },
-  { name: "Bank Account", icon: "Landmark" },
-  { name: "Bank Transfer", icon: "ArrowLeftRight" },
-  { name: "USSD", icon: "Smartphone" },
-  { name: "Mobile Money", icon: "Wallet" },
-  { name: "POS", icon: "Store" },
+  { name: "Card", icon: "CreditCard", lottie: "/lottie/card-payment.lottie" },
+  { name: "Bank Account", icon: "Landmark", lottie: "/lottie/bank-account.lottie" },
+  { name: "Bank Transfer", icon: "ArrowLeftRight", lottie: "/lottie/bank-transfer.lottie" },
+  { name: "USSD", icon: "Smartphone", lottie: "/lottie/ussd.lottie" },
+  { name: "Mobile Money", icon: "Wallet", lottie: "/lottie/mobile-money.lottie" },
+  { name: "POS", icon: "Store", lottie: "/lottie/pos.lottie" },
 ];
 
 export const onlinePayments = [

@@ -251,17 +251,28 @@
 }
 
 @keyframes blob {
-  0%,
-  100% {
+  0% {
     transform: translate(0, 0) scale(1) rotate(0deg);
     border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
   }
-  33% {
-    transform: translate(4%, -6%) scale(1.08) rotate(20deg);
+  20% {
+    transform: translate(7%, -9%) scale(1.07) rotate(13deg);
+    border-radius: 52% 48% 45% 55% / 48% 52% 48% 52%;
+  }
+  40% {
+    transform: translate(11%, 5%) scale(1.12) rotate(25deg);
     border-radius: 60% 40% 38% 62% / 54% 60% 40% 46%;
   }
-  66% {
-    transform: translate(-5%, 4%) scale(0.94) rotate(-15deg);
+  60% {
+    transform: translate(-5%, 11%) scale(0.93) rotate(9deg);
+    border-radius: 45% 55% 50% 50% / 60% 45% 55% 40%;
+  }
+  80% {
+    transform: translate(-11%, -5%) scale(0.9) rotate(-16deg);
     border-radius: 38% 62% 56% 44% / 62% 38% 62% 38%;
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
   }
 }

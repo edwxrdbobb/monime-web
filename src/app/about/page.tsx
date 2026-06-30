@@ -26,6 +26,21 @@ const features = [
   { title: "Secure by Design", description: "PCI DSS compliant, encrypted, and built to keep you and your customers safe.", icon: Lock },
 ];
 
+const teamPhotos = [
+  {
+    src: "/market-vendor-mobile-payment.jpg",
+    alt: "A market vendor in Freetown accepting mobile payments",
+  },
+  {
+    src: "/developer-dashboard-icons.jpg",
+    alt: "A developer building on the Monime platform",
+  },
+  {
+    src: "/baker-checking-phone.jpg",
+    alt: "A bakery owner checking a payment notification on their phone",
+  },
+];
+
 const formula = [
   { title: "Build for everyone, not just one", description: "Solve root problems once, and make solutions reusable." },
   { title: "Think long-term", description: "Make decisions that benefit customers, Monime, and the wider world." },
@@ -138,13 +153,19 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="glass-strong overflow-hidden rounded-3xl p-2 shadow-3d-lg">
-              <Image
-                src="/take-charge-banner.webp"
-                alt="The Monime team collaborating"
-                width={2048}
-                height={1037}
-                className="h-auto w-full rounded-2xl object-cover"
-              />
+              <div className="grid grid-cols-3 gap-2">
+                {teamPhotos.map((photo) => (
+                  <div key={photo.src} className="relative aspect-[3/4] overflow-hidden rounded-2xl">
+                    <Image
+                      src={photo.src}
+                      alt={photo.alt}
+                      fill
+                      sizes="(min-width: 1024px) 17vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
           </Reveal>
         </div>

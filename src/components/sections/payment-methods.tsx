@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import {
   ArrowLeftRight,
   CreditCard,
@@ -93,38 +94,39 @@ function PhoneShowcase({
   const Icon = icons[method.icon as keyof typeof icons];
 
   return (
-    <div className="glass relative mx-auto w-full max-w-sm rounded-[2.5rem] p-8 shadow-3d-lg">
+    <div className="glass relative mx-auto flex w-full max-w-sm flex-col items-center justify-center gap-6 rounded-[2.5rem] p-10 shadow-3d-lg">
       <div className="bg-grid absolute inset-0 -z-10 rounded-[2.5rem] opacity-30 mask-fade-b" />
-      <div className="glass-strong relative mx-auto flex aspect-[9/16] max-w-[220px] flex-col rounded-[2rem] p-4 shadow-3d-lg">
-        <div className="mx-auto h-1 w-10 rounded-full bg-muted" />
-        <div className="mt-6 flex flex-1 flex-col items-center justify-center gap-4">
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={method.name}
-              initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              exit={{ opacity: 0, scale: 0.7 }}
-              transition={{ duration: 0.3 }}
-              className="flex size-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/30"
-            >
-              <Icon className="size-7" />
-            </motion.span>
-          </AnimatePresence>
-          <p className="text-sm font-medium text-foreground">Pay with {method.name}</p>
-          <div className="flex gap-1.5">
-            {paymentMethods.map((m, i) => (
-              <button
-                key={m.name}
-                aria-label={`Show ${m.name}`}
-                onClick={() => onSelect(i)}
-                className={cn(
-                  "h-1.5 rounded-full transition-all",
-                  i === active ? "w-5 bg-primary" : "w-1.5 bg-muted",
-                )}
-              />
-            ))}
-          </div>
-        </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={method.name}
+          initial={{ opacity: 0, scale: 0.7, rotate: -8 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          exit={{ opacity: 0, scale: 0.7 }}
+          transition={{ duration: 0.3 }}
+          className="flex size-52 items-center justify-center"
+        >
+          {method.lottie ? (
+            <DotLottieReact src={method.lottie} loop autoplay className="size-52" />
+          ) : (
+            <span className="flex size-20 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg shadow-primary/30">
+              <Icon className="size-9" />
+            </span>
+          )}
+        </motion.div>
+      </AnimatePresence>
+      <p className="text-sm font-medium text-foreground">Pay with {method.name}</p>
+      <div className="flex gap-1.5">
+        {paymentMethods.map((m, i) => (
+          <button
+            key={m.name}
+            aria-label={`Show ${m.name}`}
+            onClick={() => onSelect(i)}
+            className={cn(
+              "h-1.5 rounded-full transition-all",
+              i === active ? "w-5 bg-primary" : "w-1.5 bg-muted",
+            )}
+          />
+        ))}
       </div>
     </div>
   );

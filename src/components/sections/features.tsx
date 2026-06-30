@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ArrowUpRight, ShieldCheck, Wallet } from "lucide-react";
 
 import { ScrollReveal, ScrollStagger } from "@/components/gsap/scroll-reveal";
@@ -7,9 +8,21 @@ import { features } from "@/lib/content";
 const icons = { ShieldCheck, Wallet, ArrowUpRight };
 
 const collage = [
-  { label: "Retail", gradient: "from-amber-400/80 via-orange-400/70 to-rose-400/60" },
-  { label: "Freelance", gradient: "from-sky-400/80 via-blue-400/70 to-cyan-400/60" },
-  { label: "Food & Beverage", gradient: "from-emerald-400/80 via-teal-400/70 to-cyan-400/60" },
+  {
+    label: "Retail",
+    image: "/retail-boutique-payment.jpg",
+    alt: "A boutique shop owner accepting a tap-to-pay purchase from customers",
+  },
+  {
+    label: "Freelance",
+    image: "/tech-freelancer-workspace.jpg",
+    alt: "A freelancer working from home on a laptop with the Monime dashboard open",
+  },
+  {
+    label: "Food & Beverage",
+    image: "/cafe-tap-to-pay.jpg",
+    alt: "A café owner accepting a contactless payment at the counter",
+  },
 ];
 
 export function Features() {
@@ -29,10 +42,16 @@ export function Features() {
         {collage.map((item) => (
           <div
             key={item.label}
-            className={`group relative h-56 overflow-hidden rounded-3xl bg-gradient-to-br ${item.gradient} p-5 shadow-lg`}
+            className="group relative h-56 overflow-hidden rounded-3xl p-5 shadow-lg"
           >
-            <div className="bg-dot absolute inset-0 opacity-20 mix-blend-overlay" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/0 to-black/0 transition-opacity group-hover:from-black/50" />
+            <Image
+              src={item.image}
+              alt={item.alt}
+              fill
+              sizes="(min-width: 640px) 33vw, 100vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/0 transition-opacity group-hover:from-black/85" />
             <span className="relative z-10 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
               {item.label}
             </span>

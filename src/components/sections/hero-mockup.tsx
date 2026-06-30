@@ -1,7 +1,12 @@
 "use client";
 
+import { useRef } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
+import { useGSAP } from "@gsap/react";
 import { ArrowDownLeft, ArrowUpRight, ShoppingCart, Wallet } from "lucide-react";
+
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const transactions = [
   { name: "Aminata's Store — POS", time: "Just now", amount: "+SLE 420", positive: true },
@@ -10,9 +15,57 @@ const transactions = [
 ];
 
 export function HeroMockup() {
+  const tiltRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!tiltRef.current) return;
+
+      if (prefersReducedMotion()) {
+        gsap.set(tiltRef.current, { rotate: -6 });
+        return;
+      }
+
+      gsap.fromTo(
+        tiltRef.current,
+        { rotate: -9 },
+        { rotate: -3, duration: 2.8, ease: "sine.inOut", repeat: -1, yoyo: true },
+      );
+    },
+    { scope: tiltRef },
+  );
+
   return (
     <div className="relative mx-auto w-full max-w-md">
       <div className="absolute -inset-10 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/25 via-sky-400/15 to-transparent blur-3xl" />
+
+      <div
+        ref={tiltRef}
+        className="absolute -bottom-14 -right-24 w-64 origin-bottom drop-shadow-2xl "
+      >
+        <Image
+          src="/hero-image.png"
+          alt="A Monime customer checking their balance on their phone "
+          width={704}
+          height={1524}
+          className="h-auto w-full"
+          priority
+        />
+      </div>
+
+        <div
+        ref={tiltRef}
+        className="absolute -top-16 -left-32 w-64 origin-top drop-shadow-2xl "
+      >
+        <Image
+          src="/hero-img.png"
+          alt="A Monime customer recieved payment on thier POS machine "
+          width={704}
+          height={1524}
+          className="h-auto w-full transform rotate-16"
+          priority
+        />
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 30, rotate: -2 }}
